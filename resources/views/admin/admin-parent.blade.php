@@ -26,10 +26,11 @@
                             <span class="sr-only">Open user menu</span>
                             <div
                                 class="h-8 w-8 rounded-full bg-purple-600 flex items-center justify-center text-white font-bold">
+                            {{ mb_substr(auth()->user()->name, 0, 1) }}
 
                             </div>
                             <span class="ml-2 text-gray-300 group-hover:text-white">
-                                Hi, Admin
+                                Hi, {{ auth()->user()->name }}
                             </span>
                         </button>
 

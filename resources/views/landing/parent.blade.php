@@ -27,7 +27,7 @@
 
         <div>
             @guest
-                <a href=""
+                <a href="{{ route('login') }}"
                     class="px-4 py-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium hover:shadow-lg transition-all duration-200">
                     Login
                 </a>
@@ -39,10 +39,9 @@
                         <span class="sr-only">Open user menu</span>
                         <div
                             class="h-8 w-8 rounded-full bg-purple-600 flex items-center justify-center text-white font-bold">
-
+                            {{ mb_substr(auth()->user()->name, 0, 1) }}
                         </div>
-                        <span class="ml-2 text-gray-300 group-hover:text-white">
-                            Hi, {{ auth()->user()->name }}
+                        <span class="ml-2 text-gray-300 bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent group-hover:text-white">{{ auth()->user()->name }}
                         </span>
                     </button>
 
