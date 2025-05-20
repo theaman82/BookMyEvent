@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Devrabiul\ToastMagic\Facades\ToastMagic;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -30,6 +31,7 @@ class HomeController extends Controller
             ]);
 
             $data = User::create($data);
+            ToastMagic::success('User Successfully Registered');
             return redirect()->route('login');
         }
         return view('landing.register');
@@ -47,15 +49,19 @@ class HomeController extends Controller
                 // if(Auth::user()->isAdmin){
                 //     return redirect()->route('admin.dashboard');
                 // }
+                ToastMagic::success('User Looged In');
                 return redirect()->route('home');
             }else{
+                ToastMagic::error('Invalid Credentials');
                 return redirect()->back();
             }
         }
         return view('landing.login');
     }
 
-    public function logout(){
-        
+    public function logoutUser(){
+      Auth::logout(); 
+      ToastMagic::success('User Logged Out');
+      return redirect()->route('login'); 
     }
 }

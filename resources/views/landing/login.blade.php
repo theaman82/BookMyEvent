@@ -5,7 +5,7 @@
 @section('main')
     <div class="min-h-screen bg-gray-50 flex flex-col items-center justify-center py-12 sm:px-6 lg:px-8">
         <div class="bg-white flex w-[60%] shadow-lg sm:rounded-lg rounded">
-            <div class="w-6/12 bg-linear-to-r from-purple-500 to-pink-500  p-10 rounded-l">
+            <div class="w-6/12 bg-teal-500  p-10 rounded-l">
                 <h2 class="text-3xl font-bold text-white mb-3">Plan Your Perfect Event</h2>
                 <p class="text-lg text-gray-200">From weddings to seminars,<br> we help you find the perfect venue <br>and
                     vendors — all in one place.</p>
@@ -19,7 +19,7 @@
             </div>
             <div class="w-6/12 bg-white p-10 rounded-r">
                 <h2
-                    class="text-3xl bg-gradient-to-r from-blue-400 to-purple-500 font-bold text-gray-800 bg-clip-text text-transparent">
+                    class="text-3xl font-bold text-gray-800">
                     Welcome Back</h2>
                 <form action="{{ route('login') }}" class="mt-5" method="post">
                     @csrf

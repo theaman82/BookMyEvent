@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin | @yield('title') | {{ env('APP_NAME') }}</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -37,7 +38,7 @@
                         <!-- Dropdown menu -->
                         <div
                             class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block">
-                            <a href="" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Logout</a>
+                            <a href="{{ route('logoutUser') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Logout</a>
                         </div>
                     </div>
                     <div class="hidden md:block">
@@ -68,7 +69,7 @@
             @show
         </div>
     </div>
-
+<script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </body>
 
 </html>

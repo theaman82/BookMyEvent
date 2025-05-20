@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Devrabiul\ToastMagic\Facades\ToastMagic;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -19,6 +20,8 @@ class AdminController extends Controller
 
     public function deleteUser($id){
         User::find($id)->delete();
+        ToastMagic::error('User Successfully Deleted');
         return redirect()->back();
+
     }
 }
